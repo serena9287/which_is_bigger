@@ -20,10 +20,10 @@ const displayMessage = function (message) {
 
 //generate 2 random no. for diameter and side
 function getRandomSide() {
-    return side = Math.floor(Math.random() * (150) ) + 120; // from 150 to 300
+    return side = Math.floor(Math.random() * (150) ) + 120; 
 }
-function getRandomDiameter() {                                   //generate random diameter
-    return diameter = Math.floor(Math.random() * (150) ) + 150;  // from 250 to 400
+function getRandomDiameter() {                                   
+    return diameter = Math.floor(Math.random() * (150) ) + 150;  
 }
 
 //new circle
@@ -51,7 +51,6 @@ window.addEventListener('load', createNewSquare)
 btnNew.addEventListener('click', createNewCircle)
 btnNew.addEventListener('click', createNewSquare)
 
-circle.addEventListener('click', clickCircle)
 
 //correct or incorrect answer
 function answerCorrectly(){
@@ -73,6 +72,7 @@ function answerIncorrectly(){
 }
 
 //circle
+circle.addEventListener('click', clickCircle)
 function clickCircle(){
     if (areaOfCircle > areaOfSquare){
         answerCorrectly();
@@ -81,8 +81,8 @@ function clickCircle(){
     }
 }
 
-square.addEventListener('click', clickSquare)
 //square
+square.addEventListener('click', clickSquare)
 function clickSquare(){
     if (areaOfSquare > areaOfCircle){
         answerCorrectly();
