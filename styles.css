@@ -10,14 +10,17 @@ body{
   color: white;
   font-family: 'Barriecito', cursive;
   max-width: 960px;
+  width: 90%;
   margin: 0 auto;
 }
 
 .container {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
   align-items: center;
-  flex-wrap: wrap;
+  grid-template-areas:
+  "new message score";
 }
 
 /** header */
@@ -51,33 +54,63 @@ header{
 .btn--new{
   background-color: white;
   color: black;
+  grid-area: new;
 }
 .message{
   font-size: 2rem;
   color: #c7365f;
   width: 130px;
+  text-align: center;
+  grid-area: message;
 }
 
 .label-score {
   display: inline;
   font-size: 2rem;
+  grid-area: score;
 }
 
 .score{
   display: inline-block;
   width: 50px;
+  text-align: center;
 }
 
 /** main section */
+.container--main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 #circle {
   border-radius: 50%;
   background-color: #FFC000;
+  margin: 10px;
 }
 
 #square {
   background-color: #FFC000;
+  margin: 10px;
 }
 
 #circle:hover, #square:hover{
   cursor: pointer;  
+}
+
+/** mobile */
+@media only screen and (max-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas: 
+    "new score"
+    "message message";
+  }
+
+  .container--main{
+    flex-direction: column;
+  }
 }
