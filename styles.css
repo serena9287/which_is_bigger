@@ -67,6 +67,7 @@ header{
 .label-score {
   display: inline;
   font-size: 2rem;
+  text-align: center;
   grid-area: score;
 }
 
